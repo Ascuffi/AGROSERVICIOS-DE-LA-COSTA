@@ -1,3 +1,9 @@
+/* ========================================
+   Agro Servicios de la Costa - Estilos
+   DiseÃ±o corporativo industrial | Mobile-first
+   ======================================== */
+
+/* --- Variables --- */
 :root {
   --color-primary: #0f2744;
   --color-primary-dark: #0a1c33;
@@ -571,7 +577,7 @@ ul {
   transform: scale(1.05);
 }
 
-/* No superponer footer en mobile: ajuste de posición */
+/* No superponer footer en mobile: ajuste de posiciÃ³n */
 @media (max-width: 767px) {
   .whatsapp-btn {
     bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
@@ -595,10 +601,10 @@ ul {
   padding: 2.5rem 0;
 }
 
-/* Espacio extra en footer mobile para que el botón WhatsApp no tape el contenido */
+/* Espacio extra en footer mobile para que el botÃ³n WhatsApp no tape el contenido */
 @media (max-width: 767px) {
   .footer {
-    padding-bottom: calc(2.5rem + 72px); /* Altura botón + margen */
+    padding-bottom: calc(2.5rem + 72px); /* Altura botÃ³n + margen */
   }
 }
 
