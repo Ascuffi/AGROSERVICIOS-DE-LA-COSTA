@@ -244,7 +244,12 @@ ul {
 .hero__bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&q=80');
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  background-color: var(--color-primary-dark);
+  background-image: url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1920&q=80');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -347,11 +352,23 @@ ul {
 .about {
   padding: 4rem 0;
   background-color: var(--color-gray-50);
+  background-image: linear-gradient(rgba(248, 250, 252, 0.88), rgba(248, 250, 252, 0.92)), url("https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+  .about {
+    background-attachment: scroll;
+  }
 }
 
 .about__grid {
   display: grid;
   gap: 2.5rem;
+  position: relative;
 }
 
 .about__content {
@@ -442,6 +459,28 @@ ul {
   transition: background-color var(--transition), color var(--transition);
 }
 
+.service-card__media {
+  width: calc(100% + 4rem);
+  margin: -2rem -2rem 1.5rem;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-md);
+  background-color: var(--color-gray-100);
+}
+
+.service-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.service-card:hover .service-card__media img {
+  transform: scale(1.06);
+}
+
 .service-card:hover .service-card__icon {
   background-color: var(--color-primary);
   color: var(--color-white);
@@ -465,17 +504,41 @@ ul {
 .contact {
   padding: 4rem 0;
   background-color: var(--color-gray-50);
+  background-image: linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.78)), url("https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1920&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    background-attachment: scroll;
+  }
+}
+
+.contact .section-title {
+  color: var(--color-white);
+}
+
+.contact .section-subtitle {
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .contact__grid {
   display: grid;
   gap: 2.5rem;
+  position: relative;
 }
 
 .contact__form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
 }
 
 .form-group {
@@ -697,6 +760,11 @@ ul {
     padding: 2.25rem;
   }
 
+  .service-card__media {
+    width: calc(100% + 4.5rem);
+    margin: -2.25rem -2.25rem 1.5rem;
+  }
+
   .contact__grid {
     grid-template-columns: 1.5fr 1fr;
   }
@@ -743,5 +811,10 @@ ul {
 
   .service-card {
     padding: 2.5rem;
+  }
+
+  .service-card__media {
+    width: calc(100% + 5rem);
+    margin: -2.5rem -2.5rem 1.5rem;
   }
 }
